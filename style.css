@@ -2,27 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .diagonal {
   width: 100%;
   height: 50px;
   overflow: hidden;
   background-color: #3eaad4;
-  transform: skewY(-10deg) scaleY(10);
+  transform: skewY(-10deg) scaleY(12);
   position: absolute;
   top: 0%;
 }
 .hero {
-  /* background-color: #3eaad4; */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
-  margin-top: 16px;
+  margin-top: 42px;
   position: relative;
   z-index: 1;
 }
-.image {
+.hero .image {
   position: relative;
   max-width: 450px;
 }
@@ -37,6 +37,9 @@
   bottom: 0px;
   left: 10px;
   color: #fff;
+}
+.tablet-image {
+  display: none;
 }
 .about {
   max-width: 550px;
@@ -53,6 +56,11 @@
   gap: 10px;
   margin-top: 30px;
 }
+.socails svg,
+.demo svg,
+.connect svg {
+  cursor: pointer;
+}
 svg {
   width: 15px;
 }
@@ -62,10 +70,10 @@ main {
 .work-container {
   max-width: 1000px;
   margin: 60px auto;
+  padding: 30px;
 }
 .work {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-content: center;
@@ -103,7 +111,6 @@ main {
   gap: 10px;
   background-color: #3eaad4;
   padding: 30px;
-  /* margin-top: 30px; */
   width: 100%;
   overflow: hidden;
 }
@@ -136,4 +143,65 @@ main {
 .connect {
   display: flex;
   gap: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .work {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero .image {
+    display: none;
+  }
+  .tablet-image {
+    display: block;
+    width: 300px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    border: 1px;
+  }
+  .tablet-image img {
+    height: 200px;
+  }
+  .socails {
+    display: none;
+  }
+  .tablet-image img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 428px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero .image {
+    display: block;
+    position: relative;
+  }
+
+  .about {
+    box-shadow: unset;
+  }
+  .tablet-image {
+    display: none;
+  }
+  .socails {
+    justify-content: center;
+    display: block;
+  }
+  .work-container {
+    margin-top: unset;
+  }
+  .work-container h2 {
+    text-align: center;
+  }
+  .work {
+    grid-template-columns: 1fr;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-image {
+    max-width: unset;
+  }
 }
